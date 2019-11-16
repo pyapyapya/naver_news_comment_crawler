@@ -2,6 +2,8 @@ import math
 from selenium import webdriver
 from time import sleep
 from selenium.common.exceptions import ElementNotVisibleException
+from selenium.common.exceptions import ElementNotInteractableException
+
 # 크롤링 작업을 위한 setting
 
 
@@ -35,7 +37,8 @@ def click_botten():
             i += 1
         except ElementNotVisibleException:
             break
-
+        except ElementNotInteractableException:
+            break
 
 # 덧글을 크롤링 함.
 
