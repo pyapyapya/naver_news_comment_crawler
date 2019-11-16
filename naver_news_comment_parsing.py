@@ -45,7 +45,7 @@ def click_botten():
 
 def write_txt(cBox, comment_txt):
     for i in cBox:
-        print(str(i.text))
+        # print(str(i.text))
         # print(type(str(i.text)))
         comment_txt.write(str(i.text) + '\n')
     comment_txt.close()
