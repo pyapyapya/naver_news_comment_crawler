@@ -1,4 +1,5 @@
 import math
+import config
 from selenium import webdriver
 from time import sleep
 from selenium.common.exceptions import ElementNotVisibleException
@@ -8,7 +9,7 @@ from selenium.common.exceptions import ElementNotInteractableException
 
 
 def url_lst_to_url():
-    url_file = open('E:\link.txt', 'r', encoding='utf-8')
+    url_file = open(os.path.join(['url_file_path'], 'url_file.txt'), 'r', encoding='utf-8')
     file = url_file.readlines()
     lst = []
     for i in file:
@@ -57,7 +58,7 @@ def main():
     url_lst = url_lst_to_url()
     a = 1
     for i in url_lst:
-        comment_txt = open('E:\kk' + str(a) +'.txt', 'w', encoding="utf-8")
+        comment_txt = open(os.path.join(['save_path'], 'file_name.txt'), 'w', encoding="utf-8")
         driver.get(i)
         click_botten()
         cBox = driver.find_elements_by_css_selector('span[class=u_cbox_contents]')
